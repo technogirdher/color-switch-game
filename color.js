@@ -146,10 +146,10 @@ class trap{
         if(this.flag){
             startInterval();
             this.flag=false;
-            this.block[0].y=this.j;
-            this.block[1].y=this.j;
-            this.block[2].y=this.j;
-            this.block[3].y=this.j;
+            this.block[0].y=this.j+150;
+            this.block[1].y=this.j+150;
+            this.block[2].y=this.j+150;
+            this.block[3].y=this.j+150;
             
         }
         if (change%4==0){

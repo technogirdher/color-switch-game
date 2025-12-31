@@ -18,6 +18,9 @@ function startInterval(spd) {
     if(spd>3){
         this.x=this.x-0.5;
     }
+    if(spd>4){
+        this.x=4;
+    }
     clearInterval(intervalId);
     intervalId = setInterval(() => {
         change = (change + 1) % 4;
@@ -148,7 +151,7 @@ class trap{
     }
     movement2(g){
         if(this.flag){
-            startInterval();
+            startInterval(spd);
             this.flag=false;
             this.block[0].y=this.j+150;
             this.block[1].y=this.j+150;
@@ -188,7 +191,7 @@ class trap{
             this.block[3].y=-300;
             this.food = new figure(imfood, window.innerWidth/2, -400, 50, 50,5);
             spd++;
-            startInterval();
+            startInterval(spd);
             
         }
     }

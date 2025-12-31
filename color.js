@@ -42,6 +42,19 @@ document.addEventListener('keyup',function(e){
         
     }
 });
+document.addEventListener('touchstart', function () {
+    if (keyd) {
+        keyd = false;
+        jump = true;
+        vel = -7;
+        console.log('jumped (touch)');
+    }
+    enter = true;
+});
+
+document.addEventListener('touchend', function () {
+    keyd = true;
+});
 
 console.log(window.innerHeight);
 window.onload = function () {

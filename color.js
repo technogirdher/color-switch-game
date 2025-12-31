@@ -13,11 +13,15 @@ keyd=true;
 change=0;
 let intervalId;
 
-function startInterval() {
+function startInterval(spd) {
+    this.x=spd;
+    if(spd>3){
+        this.x=this.x-0.5;
+    }
     clearInterval(intervalId);
     intervalId = setInterval(() => {
         change = (change + 1) % 4;
-    }, 1000 / (spd / 4));
+    }, 1000 / (this.x / 4));
 }
 document.addEventListener('keydown',function(e){
     if(e.key===' ' && keyd){
@@ -178,10 +182,10 @@ class trap{
         }
         if((this.block[0].y>=hig&&this.block[1].y>=hig&&this.block[2].y>=hig&&this.block[3].y>=hig)){
             
-            this.block[0].y=-150;
-            this.block[1].y=-150;
-            this.block[2].y=-150;
-            this.block[3].y=-150;
+            this.block[0].y=-300;
+            this.block[1].y=--300;
+            this.block[2].y=-300;
+            this.block[3].y=-300;
             this.food = new figure(imfood, window.innerWidth/2, -400, 50, 50,5);
             spd++;
             startInterval();

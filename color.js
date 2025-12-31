@@ -183,7 +183,7 @@ class trap{
         if((this.block[0].y>=hig&&this.block[1].y>=hig&&this.block[2].y>=hig&&this.block[3].y>=hig)){
             
             this.block[0].y=-300;
-            this.block[1].y=--300;
+            this.block[1].y=-300;
             this.block[2].y=-300;
             this.block[3].y=-300;
             this.food = new figure(imfood, window.innerWidth/2, -400, 50, 50,5);
